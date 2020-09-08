@@ -6,7 +6,7 @@ clc;
 
 global SR FR
 SR=10000;     % Sampling frequency of audio
-FR=30;
+FR=30;        % frame rate
 
 %% loading file names
 
@@ -52,8 +52,6 @@ for i= 2 % enter the file number
     
     %%
     
-    
-    
     % Gets and loads the matfile
     load(f_names(i,1:20))
     data=eval(f_names(i,1:16));
@@ -81,8 +79,9 @@ for i= 2 % enter the file number
     c_Position=[];
     EOD_pos=[];
     eod_Pos=[];
-    % things to play around with
-    fr=3; % last frame you want to pick. If your trial end frame is in coloum 5, then 5
+    
+    %% things to play around with
+    fr=5; % last frame you want to pick. If your trial end frame is in coloum 5, then 5
     ex=0;
     threshold=20;% play with this for better tracking
     visualization=0;% 2_centroid, 0_none, tail and center= '1'
@@ -146,6 +145,4 @@ for i= 2 % enter the file number
     
 end
 
-%plotting-eod/position plot
-%dist_speed-speed/position plot
-%
+
